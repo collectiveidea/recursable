@@ -20,7 +20,3 @@ if defined?(SymetrieCom::Acts::NestedSet)
     include CollectiveIdea::Recursable
   end
 end
-
-module Enumerable
-  include CollectiveIdea::Enumerable
-end
