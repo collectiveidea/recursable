@@ -15,8 +15,8 @@ if defined?(ActiveRecord::Acts::NestedSet)
   end
 end
 
-if defined?(SymetrieCom::Acts::NestedSet)
-  module SymetrieCom::Acts::NestedSet
+if defined?(SymetrieCom::Acts::NestedSet::InstanceMethods)
+  module SymetrieCom::Acts::NestedSet::InstanceMethods
     include CollectiveIdea::Recursable
   end
 end
