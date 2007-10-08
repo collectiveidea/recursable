@@ -12,11 +12,11 @@ module CollectiveIdea
       end
             
       def is_or_descends_from?(other)
-        (other.lft..other.rgt).include?(self.lft)
+        other.lft <= self.lft && self.lft < other.rgt
       end
       
       def is_or_is_descendant_of?(other)
-        (self.lft..self.rgt).include?(other.lft)        
+        self.lft <= other.lft && other.lft < self.rgt
       end
     end
   end
