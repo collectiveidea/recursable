@@ -1,6 +1,7 @@
 require File.join(File.dirname(__FILE__), 'lib', 'enumerable')
 require File.join(File.dirname(__FILE__), 'lib', 'recursable')
 require File.join(File.dirname(__FILE__), 'lib', 'tree')
+require File.join(File.dirname(__FILE__), 'lib', 'nested_set')
 
 if defined?(ActiveRecord::Acts::Tree::InstanceMethods)
   module ActiveRecord::Acts::Tree::InstanceMethods
