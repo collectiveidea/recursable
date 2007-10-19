@@ -22,3 +22,9 @@ if defined?(SymetrieCom::Acts::NestedSet::InstanceMethods)
     include CollectiveIdea::Recursable::NestedSet
   end
 end
+
+if defined?(CollectiveIdea::Acts::NestedSet::InstanceMethods)
+  module CollectiveIdea::Acts::NestedSet::InstanceMethods
+    include CollectiveIdea::Recursable
+  end
+end
