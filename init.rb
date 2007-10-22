@@ -1,4 +1,5 @@
 require File.join(File.dirname(__FILE__), 'lib', 'enumerable')
+require File.join(File.dirname(__FILE__), 'lib', 'object')
 require File.join(File.dirname(__FILE__), 'lib', 'recursable')
 require File.join(File.dirname(__FILE__), 'lib', 'tree')
 require File.join(File.dirname(__FILE__), 'lib', 'nested_set')

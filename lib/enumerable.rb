@@ -4,11 +4,7 @@
 module Enumerable
   def recurse(&block)
     self.each do |x| 
-      if x.respond_to?(:recurse)
-        x.recurse(&block)
-      else
-        block.call(x)
-      end
+      x.recurse(&block)
     end
   end
 end
