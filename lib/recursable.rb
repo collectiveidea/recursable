@@ -7,6 +7,17 @@ module CollectiveIdea
         end
       }
     end
+    
+    # A recursion method built for awesome_nested_set.  Probably won't work with other nested_sets.'
+    def nested_set_recurse(set, &block)
+      block.call self, lambda{
+        index = set.index(self) + 1
+        while set[index].parent_id == self.id
+          set[index].nested_set_recurse(set, &block)
+          index += 1
+        end
+      }
+    end
 
     def recursive_map &block
       block.call self, lambda{

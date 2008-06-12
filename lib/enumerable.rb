@@ -7,4 +7,11 @@ module Enumerable
       x.recurse(&block)
     end
   end
+
+  # A recursion method built for awesome_nested_set.  Probably won't work with other nested_sets.'  
+  def nested_set_recurse(&block)
+    self.each do |x| 
+      x.nested_set_recurse(self, &block)
+    end
+  end
 end
