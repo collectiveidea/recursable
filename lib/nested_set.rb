@@ -11,11 +11,11 @@ module CollectiveIdea
         all_children
       end
             
-      def is_or_descends_from?(other)
+      def is_or_is_descendant_of?(other)
         other.lft <= self.lft && self.lft < other.rgt
       end
       
-      def is_or_is_descendant_of?(other)
+      def is_or_is_ancestor_of?(other)
         self.lft <= other.lft && other.lft < self.rgt
       end
       
