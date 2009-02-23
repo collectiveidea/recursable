@@ -1,31 +1,30 @@
-require File.join(File.dirname(__FILE__), 'lib', 'enumerable')
-require File.join(File.dirname(__FILE__), 'lib', 'object')
-require File.join(File.dirname(__FILE__), 'lib', 'recursable')
-require File.join(File.dirname(__FILE__), 'lib', 'tree')
-require File.join(File.dirname(__FILE__), 'lib', 'nested_set')
+require 'recursable'
+
+::Enumerable.extend Recursable::Enumerable
+::Object.send :include, Recursable::Object
 
 if defined?(ActiveRecord::Acts::Tree::InstanceMethods)
   module ActiveRecord::Acts::Tree::InstanceMethods
-    include CollectiveIdea::Recursable
-    include CollectiveIdea::Recursable::Tree
+    include Recursable
+    include Recursable::Tree
   end
 end
 
 if defined?(ActiveRecord::Acts::NestedSet::InstanceMethods)
   module ActiveRecord::Acts::NestedSet::InstanceMethods
-    include CollectiveIdea::Recursable
+    include Recursable
   end
 end
 
 if defined?(SymetrieCom::Acts::NestedSet::InstanceMethods)
   module SymetrieCom::Acts::NestedSet::InstanceMethods
-    include CollectiveIdea::Recursable
-    include CollectiveIdea::Recursable::NestedSet
+    include Recursable
+    include Recursable::NestedSet
   end
 end
 
 if defined?(CollectiveIdea::Acts::NestedSet::InstanceMethods)
   module CollectiveIdea::Acts::NestedSet::InstanceMethods
-    include CollectiveIdea::Recursable
+    include Recursable
   end
 end
