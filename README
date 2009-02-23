@@ -1,13 +1,15 @@
 Recursable
 ==========
 
-Introduction goes here.
+Recursable is a plugin that provides a method for recursing through trees and nested sets.
 
-
-Example
-=======
-
-Example goes here.
-
+  <% @things.recurse do |thing, recurse| -%>
+    <li>
+      <%=h thing.name %>
+      <% unless thing.children.empty? -%>
+        <ul><% recurse.call %></ul>
+      <% end %>
+    <% end %>
+  <% end -%>
 
 Copyright (c) 2007 Daniel Morrison, Collective Idea, released under the MIT license

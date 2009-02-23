@@ -3,9 +3,7 @@
 # in those cases.
 module Recursable::Enumerable
   def recurse(&block)
-    self.each do |x| 
-      x.recurse(&block)
-    end
+    self.each {|x| x.recurse(&block) }
   end
 
   # A recursion method built for awesome_nested_set.  Probably won't work with other nested_sets.'  

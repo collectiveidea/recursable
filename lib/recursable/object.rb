@@ -1,5 +1,5 @@
 module Recursable::Object
   def recurse(&block)
-    yield self
+    block.call self
   end
 end
